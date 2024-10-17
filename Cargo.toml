@@ -1,26 +1,31 @@
 [package]
 name = "egui_winit_ash"
+license = "MIT OR Apache-2.0"
+description = "A lightweight egui integration for winit and ash"
+homepage = "https://github.com/reinerina/egui_winit_ash"
+repository = "https://github.com/reinerina/egui_winit_ash.git"
+readme = "readme.md"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ash = "0.38.0"
-ash-window = "0.13.0"
-egui = { git = "https://github.com/fyouringnai/egui.git" }
-egui-winit = { git = "https://github.com/fyouringnai/egui.git" }
-winit = "0.30.5"
-log = "0.4.22"
-bytemuck = "1.18.0"
-image = "0.25.2"
+ash = { version = "0.38.0", default-features = false }
+ash-window = { version = "0.13.0", default-features = false }
+egui = { version = "0.29.1", default-features = false }
+egui-winit = "0.29.1"
+winit = { version = "0.30.5", default-features = false }
+log = { version = "0.4.22", default-features = false }
+bytemuck = { version = "1.18.0", default-features = false }
+raw-window-handle = "0.6.2"
 
 
 [dev-dependencies]
 pretty_env_logger = "0.4.0"
 ash = { version = "0.38.0", features = ["libloading", "linked"] }
 ash-window = "0.13.0"
-egui = { git = "https://github.com/fyouringnai/egui.git" }
-egui-winit = { git = "https://github.com/fyouringnai/egui.git" }
-egui_extras = { git = "https://github.com/fyouringnai/egui.git" , features = ["all_loaders"]}
+egui = { version = "0.29.1" }
+egui-winit = "0.29.1"
+egui_extras = { version = "0.29.1", features = ["all_loaders"] }
 winit = "0.30.5"
 log = "0.4.22"
 bytemuck = "1.18.0"

@@ -1505,7 +1505,12 @@ impl Renderer {
                     "Mismatch between texture size and texel count"
                 );
 
-                cast_slice(&image.pixels)
+                &image
+                    .pixels
+                    .iter()
+                    .map(|pixel| pixel.to_array())
+                    .flatten()
+                    .collect::<Vec<_>>()
             }
             ImageData::Font(image) => {
                 assert_eq!(
